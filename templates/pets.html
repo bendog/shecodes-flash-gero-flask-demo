@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>PETS!</title>
+        <style>
+            body{
+                background-color: chartreuse;
+            }
+            img {
+                width: 200px;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Pets!</h1>
+        <table>
+        <tr>
+          <th>name</th>
+          <th>species</th>
+          <th>age</th>
+          <th>microchipped</th>
+        </tr>
+        {% for pet in pets %}
+            <tr>
+              <td>{{pet.name}}</td>
+              <td><a href="?species={{pet.species}}">{{pet.species}}</a></td>
+              <td>{{pet.age}}</td>
+              <td>{{pet.microchipped}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr>
+        {% if pet_pic %}
+        <img src="{{ pet_pic }}" />
+        {% endif %}
+
+    </body>
+</html>
